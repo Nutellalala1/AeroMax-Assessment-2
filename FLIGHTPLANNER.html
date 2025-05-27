@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Planner - AeroMax</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css">
+    <link rel="stylesheet" href="flightplannerstyles.css">
+    <link href="https://fonts.cdnfonts.com/css/share-techmono-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/fatcat" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/days-one" rel="stylesheet">
+                            
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">AeroMax</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aircraft.html">Aircraft</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="finance.html">Financing</a></li>
+                <li><a href="FLIGHTPLANNER.html" class="active">Flight Planner</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="map"></div>
+        
+        <!-- Combined Control Panel -->
+        <div class="control-panel">
+            <div class="panel-section">
+                <h3>Map Controls</h3>
+                <label><input type="checkbox" id="show-winds" checked> Show Wind Patterns</label>
+                <label><input type="checkbox" id="show-airports" checked> Show Airports</label>
+            </div>
+            
+            <div class="panel-section">
+                <h3>Flight Information</h3>
+                <div id="flight-info">
+                    <p>Click two points on the map to plan your route</p>
+                </div>
+            </div>
+            
+            <div class="panel-section">
+                <h3>Filter Aircraft</h3>
+                <div class="filter-group">
+                    <label for="passenger-count">Passengers: <span id="passenger-value">10</span></label>
+                    <input type="range" id="passenger-count" min="4" max="50" value="10" step="1">
+                </div>
+                <div class="filter-group">
+                    <label for="range-filter">Range: <span id="range-value">4000</span> nm</label>
+                    <input type="range" id="range-filter" min="1000" max="8000" value="4000" step="100">
+                </div>
+                <button id="apply-filters" class="btn">Apply Filters</button>
+            </div>
+            
+            <div class="panel-section">
+                <h3>Available Aircraft</h3>
+                <div id="aircraft-list"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="flightplannerscript.js"></script>
+</body>
+</html>
