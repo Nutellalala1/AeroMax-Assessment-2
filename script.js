@@ -54,17 +54,3 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('message').value = `I'm interested in the ${decodeURIComponent(aircraft)}. Please send me more information.`;
     }
 });
-
-// Navigation highlighting (for current page)
-function highlightCurrentPage() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-links a');
-    
-    navLinks.forEach(link => {
-        const linkPage = link.getAttribute('href');
-        if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
-            link.style.color = '#4CAF50';
-            link.style.fontWeight = 'bold';
-        }
-    });
-}

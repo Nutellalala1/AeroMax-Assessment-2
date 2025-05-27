@@ -231,7 +231,7 @@ function clearRoute() {
 }
 
 function addAirports() {
-    // Sample airports - in a real app you'd fetch these from a database
+    // Sample airports
     const airports = [
         { name: "JFK International", lat: 40.6413, lng: -73.7781 },
         { name: "LAX International", lat: 33.9416, lng: -118.4085 },
